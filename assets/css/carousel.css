@@ -1,0 +1,138 @@
+/* === Conference page carousel (transparent, no border) === */
+.conf-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: pan-y; /* vertical scroll allowed; horizontal handled in JS */
+}
+.conf-carousel__track {
+  display: flex;
+  gap: clamp(12px, 2.5vw, 22px);
+  will-change: transform;
+  transition: transform .35s ease;
+  padding: 8px 6px;
+}
+.conf-carousel__slide {
+  flex: 0 0 auto;
+  width: clamp(220px, 32vw, 380px);
+  aspect-ratio: 1 / 1;
+  border: none !important;
+  background: transparent !important;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.conf-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: transparent !important;
+  border: none !important;
+  cursor: zoom-in;
+}
+.conf-carousel__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(17, 24, 39, 0.65);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  transition: transform .15s ease, background .2s ease, opacity .2s ease;
+}
+.conf-carousel__nav:hover { transform: translateY(-50%) scale(1.04); }
+.conf-carousel__nav:active { transform: translateY(-50%) scale(0.98); }
+.conf-carousel__nav.prev { left: 10px; }
+.conf-carousel__nav.next { right: 10px; }
+@media (max-width: 480px){
+  .conf-carousel__nav { display: none; }
+}
+
+/* === Lightbox (overlay) === */
+.conf-lightbox[hidden] { display: none !important; }
+.conf-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.92);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  align-items: center;
+  justify-items: center;
+  z-index: 9999;
+}
+.conf-lightbox__img {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  max-width: min(92vw, 1600px);
+  max-height: 90vh;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  cursor: grab;
+}
+.conf-lightbox__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(17,24,39,.7);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.conf-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(17,24,39,.7);
+  color: #fff;
+  font-size: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+.conf-lightbox__nav.prev { left: 18px; }
+.conf-lightbox__nav.next { right: 18px; }
+@media (max-width: 520px){
+  .conf-lightbox__nav { width: 46px; height: 46px; font-size: 22px; }
+}
+
+
+/* Disable zoom cursor on mobile */
+@media (max-width: 768px){
+  .conf-carousel__slide img{ cursor: default; }
+}
+
+/* Ensure no zoom cursor on mobile */
+@media (max-width: 768px){
+  .conf-carousel__slide img{ cursor: default !important; }
+  .conf-carousel__slide a{ pointer-events: auto; }
+}

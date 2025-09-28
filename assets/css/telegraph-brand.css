@@ -1,0 +1,130 @@
+
+/* Telegraph Brand Kit — drop-in CSS
+   Scope with .tg- to avoid conflicts.
+*/
+:root{
+  --tg-accent: #24B39C;      /* brand teal */
+  --tg-accent-600:#1F9A86;
+  --tg-accent-700:#17806F;
+  --tg-accent-100:#E3F7F3;
+  --tg-ink:#0F172A;          /* text */
+  --tg-ink-soft:#334155;
+  --tg-line:#E5E7EB;         /* borders */
+  --tg-bg:#FFFFFF;
+  --tg-bg-soft:#F6FBF9;
+  --tg-radius:16px;
+  --tg-radius-lg:22px;
+  --tg-shadow: 0 10px 30px rgba(15,23,42,.08), 0 2px 8px rgba(15,23,42,.06);
+  --tg-shadow-soft: 0 8px 24px rgba(36,179,156,.12);
+  --tg-space-2:8px;
+  --tg-space-3:12px;
+  --tg-space-4:16px;
+  --tg-space-6:24px;
+  --tg-space-8:32px;
+}
+
+/* -------- PATTERN HELPERS ---------- */
+.tg-grid-bg{
+  background-image:url("../svg/tg-bg-grid.svg");
+  background-size: 24px 24px;
+}
+.tg-dots-bg{
+  background-image:url("../svg/tg-bg-dots.svg");
+  background-size: 20px 20px;
+}
+.tg-rings-bg{
+  background-image:url("../svg/tg-bg-rings.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+
+/* -------- COMPONENTS ---------- */
+.tg-card{
+  background:var(--tg-bg);
+  border:1px solid var(--tg-line);
+  border-radius:var(--tg-radius-lg);
+  box-shadow:var(--tg-shadow);
+  padding:var(--tg-space-6);
+}
+
+.tg-badge{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:6px 10px;
+  border-radius:100px;
+  background:var(--tg-accent-100);
+  color:var(--tg-ink);
+  border:1px solid rgba(36,179,156,.26);
+  font-weight:600; font-size:14px;
+}
+.tg-badge .dot{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--tg-accent);
+  box-shadow:0 0 0 3px rgba(36,179,156,.20);
+}
+
+/* CTA button */
+.tg-cta{
+  --h:48px;
+  height:var(--h); line-height:var(--h);
+  padding:0 18px; border-radius:calc(var(--h)/2);
+  background:linear-gradient(180deg, var(--tg-accent) 0%, var(--tg-accent-600) 100%);
+  color:#fff; border:none; font-weight:700; letter-spacing:.2px;
+  box-shadow: 0 6px 20px rgba(36,179,156,.35);
+  transition:transform .12s ease, box-shadow .2s ease, filter .2s ease;
+}
+.tg-cta:hover{ transform: translateY(-1px); filter:saturate(1.05); }
+.tg-cta:active{ transform: translateY(0); box-shadow: 0 4px 12px rgba(36,179,156,.35); }
+
+/* Nav pill */
+.tg-pill{
+  display:inline-flex; align-items:center; gap:10px;
+  height:44px; padding:0 16px; border-radius:22px;
+  background:#fff; border:1px solid var(--tg-line);
+  box-shadow:var(--tg-shadow);
+}
+
+/* Underline for headings (attach class to h2/h3) */
+.tg-underline{
+  position:relative; display:inline-block;
+}
+.tg-underline::after{
+  content:""; position:absolute; left:2px; right:2px; bottom:-6px;
+  height:10px; background:url("../svg/tg-underline.svg") no-repeat center/100% 100%;
+}
+
+/* Corner accents for hero/cards */
+.tg-corner{
+  position:relative;
+}
+.tg-corner::before{
+  content:""; position:absolute; inset:auto auto 0 0; width:56px; height:56px;
+  background:url("../svg/tg-corner-squircle.svg") no-repeat center/contain;
+}
+.tg-corner.tg-corner-tr::before{ inset:0 0 auto auto; transform:scaleX(-1) scaleY(-1); }
+.tg-corner.tg-corner-bl::before{ inset:auto auto 0 0; }
+.tg-corner.tg-corner-br::before{ inset:auto 0 0 auto; transform:scaleX(-1); }
+
+/* Section divider (place as <div class="tg-divider"></div>) */
+.tg-divider{ display:none !important; }
+
+/* Chips */
+.tg-chip{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 12px; border-radius:18px;
+  background:var(--tg-bg-soft); border:1px solid var(--tg-line);
+  font-size:13px; font-weight:600;
+}
+
+/* Small icon circle, brand color */
+.tg-icon-circle{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--tg-accent-100);
+  border:1px solid rgba(36,179,156,.22);
+  display:inline-flex; align-items:center; justify-content:center;
+  color:var(--tg-accent);
+}
+
+/* Utilities */
+.tg-muted{ color:var(--tg-ink-soft); }
+.tg-accent{ color:var(--tg-accent); }

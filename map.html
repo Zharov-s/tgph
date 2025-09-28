@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Карта</title>
+<style>html,body,#map{height:100%;margin:0}</style>
+<style>/* Mobile override for map height */
+@media (max-width:560px){
+  html,
+  body{
+    height:100%;
+  }
+
+  #map{
+    height:100% !important;
+    min-height:140px;
+  }
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="assets/icons/logo-icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0A0D13">
+
+</head>
+<body>
+<div id="map"></div>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
+  const coords = [55.861853, 37.549561];
+
+  function initMap(){
+    const map = new ymaps.Map('map', {
+      center: coords,
+      zoom: 16,
+      controls: ['zoomControl']
+    });
+
+    const placemark = new ymaps.Placemark(coords, {
+      balloonContent: 'Телеграф в Ритме — Дмитровское ш., 81'
+    }, {
+      preset: 'islands#greenDotIcon'
+    });
+
+    map.geoObjects.add(placemark);
+  }
+
+  ymaps.ready(initMap);
+</script>
+</body>
+</html>

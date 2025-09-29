@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Telegraph — Конференц-зал</title>
+<meta name="description" content="Конференц-зал для бизнес-встреч, презентаций и обучающих мероприятий. До 100 человек, 5 минут от метро, полное оснащение. Скидка 15% при бронировании онлайн."/>
+<link rel="stylesheet" href="assets/css/styles.css"/>
+
+<link rel="stylesheet" href="assets/css/responsive-optimization.css"/>
+
+<style id="inline-theme-toggle-size">
+/* Меню — используем компактные квадраты как в мобильной версии */
+.menu-cubes{ width:32px !important; height:32px !important; padding:4px !important; gap:4px !important; border:none !important; }
+@media (max-width: 560px){
+  .menu-cubes{ width:28px !important; height:28px !important; }
+}
+@media (max-width: 320px){
+  .menu-cubes{ width:26px !important; height:26px !important; }
+}
+.menu-cubes span{ border-radius:8px !important; background: var(--accent) !important; border:none !important; box-shadow:none !important; }
+</style>
+
+
+<style id="booking-select-arrows">
+/* Booking selects: stylish chevrons + extra right padding */
+.form-grid select{
+  -webkit-appearance:none; -moz-appearance:none; appearance:none;
+  padding-right: 48px; background-repeat: no-repeat;
+  background-position: right 18px center; background-size: 14px 14px;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+.form-grid select{
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%23ffffff' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+body.theme-light .form-grid select{
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%230b0f1a' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.form-grid select:focus{ outline:none; box-shadow:0 0 0 2px rgba(var(--accent-rgb),.28); }
+</style>
+
+<style id="logo-badge-style">
+  /* Bigger, background-free green logo icon in the header */
+  .site-header .logo{ background: transparent !important; box-shadow: none !important; }
+  .site-header .logo .logo-badge{
+    width:40px; height:40px; display:inline-block; vertical-align:middle;
+    background-image: url('assets/icons/logo-icon-green.svg');
+    background-repeat:no-repeat; background-position:center; background-size:contain;
+    background-color: transparent !important; border:none !important; border-radius:0 !important;
+    box-shadow:none !important; filter:none !important; -webkit-backdrop-filter:none !important; backdrop-filter:none !important;
+    margin-right:12px;
+  }
+  .site-header .logo .logo-badge::before,
+  .site-header .logo .logo-badge::after{ content:none !important; }
+  @media (max-width:640px){
+    .site-header .logo .logo-badge{ width:34px; height:34px; margin-right:10px; }
+  }
+</style>
+  <link rel="stylesheet" href="assets/css/telegraph-brand.css"/>
+
+<style id="mobile-call-visible">
+@media (max-width: 768px){
+  .nav-actions .phone-link{
+    display:inline-flex !important;
+    height:34px;
+    min-height:34px;
+    padding:0 10px;
+    font-size:12.5px;
+    gap:5px;
+  }
+  .nav-actions .phone-link .phone-text{ display:none; }
+  .nav-actions .phone-link::after{
+    content:'Позвонить';
+    font-weight:600;
+    letter-spacing:.02em;
+  }
+}
+@media (max-width: 560px){
+  .nav-actions .phone-link{
+    height:28px;
+    min-height:28px;
+    padding:0 8px;
+    font-size:11px;
+    gap:4px;
+  }
+}
+</style>
+
+<style id="desktop-full-phone">
+@media (min-width: 1001px){
+  .nav-actions .phone-link .phone-text{
+    max-width: none !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="assets/css/carousel.css"/>
+<style id="mobile-formats-title">
+  .formats-title-mobile{ display:none; margin: 24px 0 12px; font-weight: 800; line-height: 1.2; }
+  @media (max-width: 768px){
+    .formats-title-mobile{ display:block; font-size: 22px; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="assets/icons/logo-icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0A0D13">
+
+</head>
+<body>
+
+
+<header class="site-header wrapper">
+  <div class="header-inner banner-track">
+    <a href="index.html" class="logo" aria-label="Telegraph — Coworking">
+      <span class="logo-badge"></span>
+      <span>Telegraph</span>
+    </a>
+    <nav class="nav-actions actions-scroller" aria-label="Главная навигация">
+      <a href="index.html" class="glass-btn"><span class="label-full">Коворкинг</span><span class="label-short" aria-hidden="true">Коворкинг</span></a>
+      
+      
+      <a href="tel:+79808002549" class="glass-btn phone-link" aria-label="Позвонить в Telegraph">
+        <svg viewBox="0 0 24 24" class="icon" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 3.9 2 2 0 0 1 4.11 2h2a2 2 0 0 1 2 1.72c.12.86.33 1.7.63 2.5a2 2 0 0 1-.45 2.11L7.1 9.9a16 16 0 0 0 6 6l1.57-1.19a2 2 0 0 1 2.11-.45c.8.3 1.64.51 2.5.63A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span class="phone-text">+7 980 800 25 49</span><span class="phone-label visually-hidden">Позвонить</span>
+      </a>
+
+      <div class="menu-cubes" id="menuCubes" aria-label="Открыть меню" role="button" tabindex="0">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<aside class="right-panel" id="rightPanel" aria-hidden="true">
+  <button type="button" class="panel-close" data-close-panel aria-label="Закрыть меню"></button>
+  <a class="panel-logo" href="index.html" aria-label="Telegraph — на главную">
+    <span class="panel-logo__mark" aria-hidden="true"></span>
+    <span class="panel-logo__name">Telegraph</span>
+  </a>
+  <div class="panel-spacer">
+    <nav class="panel-nav" aria-label="Боковое меню">
+      <a href="#formats">Форматы</a>
+      <a href="#event-gallery">Фото</a>
+      <a href="#solutions">Решения</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#booking-inline">Забронировать</a>
+      <a href="#map-top">Расположение</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </div>
+  <div class="panel-widgets">
+    <a class="panel-widget panel-widget--telegram" href="https://t.me/+79808002549" target="_blank" rel="noopener" aria-label="Открыть Telegram">
+      <img class="panel-widget__icon" src="assets/icons/panel-telegram.svg" alt=""/ aria-hidden="true">
+    </a>
+    <a class="panel-widget panel-widget--whatsapp" href="https://wa.me/79808002549" target="_blank" rel="noopener" aria-label="Открыть WhatsApp">
+      <img class="panel-widget__icon" src="assets/icons/panel-whatsapp.svg" alt=""/ aria-hidden="true">
+    </a>
+  </div>
+</aside>
+
+
+<div class="page-content">
+<main class="wrapper">
+  <div class="hero-banner card glass banner-track">
+    <div class="hero-media">
+      <img class="hero-image" src="assets/img/office-01.png" alt="Зал для мероприятий"/>
+      <div class="hero-overlay hero-overlay-strong"></div>
+      <div class="hero-title-block">
+        <h1 style="color:#fff; font-size:clamp(26px,4vw,38px); font-weight:900; text-align:center; text-shadow:0 4px 32px rgba(0,0,0,0.22); max-width:800px; margin-bottom:14px; line-height:1.13;">
+          <span style="display:inline-block; background:linear-gradient(90deg,rgba(27,83,165,0.24),rgba(4,16,38,0.24)); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-radius:24px; padding:18px 32px; box-shadow:0 4px 32px rgba(27,83,165,0.20); border:1px solid rgba(36,179,156,0.28); pointer-events:none;">
+            Конференц‑зал для бизнес‑встреч, презентаций<br>и обучающих мероприятий
+          </span>
+        </h1>
+        <p style="color:#fff; font-size:clamp(16px,1.7vw,22px); font-weight:500; text-align:center; text-shadow:0 2px 16px rgba(0,0,0,0.18); max-width:650px; margin-bottom:28px; pointer-events:none;">Современный конференц-зал в 5 минутах от метро, полностью оборудованный для проведения мероприятий любой формы с размещением до 100 человек. <span style='color:#24B39C;font-weight:700;'>Скидка 15% при бронировании онлайн!</span></p>
+        <div class="cta" style="display:flex; gap:22px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
+          <a class="glass-btn" href="#pricing" style="font-size:18px; padding:14px 32px; border-radius:20px; box-shadow:0 2px 20px rgba(27,83,165,0.22);">Смотреть тарифы</a>
+          <button class="glass-btn accent" data-open-booking data-subject="Конференц-зал — бронирование" style="font-size:18px; padding:14px 32px; border-radius:20px; box-shadow:0 2px 20px rgba(27,83,165,0.22);">Забронировать дату</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <!-- Конференц-зал: горизонтальная карусель без фона/рамок -->
+  <section class="section section-tight" id="conf-carousel-section" aria-label="Фотогалерея конференц-зала">
+    <div class="conf-carousel" data-conf-carousel>
+      <button class="conf-carousel__nav prev" data-prev aria-label="Назад" title="Назад">‹</button>
+      <div class="conf-carousel__track" data-track>
+        <div class="conf-carousel__slide"><img src="assets/img/carousel/01.jpg" alt="Фото зала 1"/></div>
+        <div class="conf-carousel__slide"><img src="assets/img/carousel/02.jpg" alt="Фото зала 2"/></div>
+        <div class="conf-carousel__slide"><img src="assets/img/carousel/03.jpg" alt="Фото зала 3"/></div>
+        <div class="conf-carousel__slide"><img src="assets/img/carousel/04.jpg" alt="Фото зала 4"/></div>
+        <div class="conf-carousel__slide"><img src="assets/img/carousel/05.jpg" alt="Фото зала 5"/></div>
+        <div class="conf-carousel__slide"><img src="assets/img/carousel/06.jpg" alt="Фото зала 6"/></div>
+        <div class="conf-carousel__slide"><img src="assets/img/carousel/07.jpg" alt="Фото зала 7"/></div>
+        <div class="conf-carousel__slide"><img src="assets/img/carousel/08.jpg" alt="Фото зала 8"/></div>
+      </div>
+      <button class="conf-carousel__nav next" data-next aria-label="Вперёд" title="Вперёд">›</button>
+    </div>
+  </section>
+
+
+  <section class="section tg-dots-bg formats-section" id="formats">
+<h2 class="formats-title-mobile">Форматы мероприятий</h2>
+    <h2 class="tg-underline">Форматы мероприятий</h2>
+    <p class="formats-sub">Группируем встречи по задачам: деловые сессии и проекты с обучением или контентом. Так проще выбрать подходящий сценарий и сразу обсудить детали.</p>
+    <div class="formats-highlight">
+      <div class="formats-group">
+        <h3>Деловые встречи</h3>
+        <ul class="formats-list">
+          <li>Конференция</li>
+          <li>Бизнес‑завтрак</li>
+          <li>Стратегическая сессия</li>
+          <li>Совещания</li>
+        </ul>
+      </div>
+      <div class="formats-group">
+        <h3>Обучение и контент</h3>
+        <ul class="formats-list">
+          <li>Тренинг / лекция / мастер‑класс</li>
+          <li>Съёмки интервью и шоу для YouTube</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section event-gallery" id="event-gallery">
+    <h2 class="tg-underline">Фото с мероприятий</h2>
+    <div class="event-photo-grid">
+      <div class="event-photo-card large">
+        <img src="assets/img/event-01.jpg" alt="Съёмка и подготовка мероприятия" />
+        <div class="event-caption">Профессиональная съёмка и подготовка пространства</div>
+      </div>
+      <div class="event-photo-card">
+        <img src="assets/img/event-02.jpg" alt="Трансляция и контроль" />
+        <div class="event-caption">Трансляция и контроль качества на площадке</div>
+      </div>
+      <div class="event-photo-card large">
+        <img src="assets/img/event-03.jpg" alt="Genesis International Film Festival" />
+        <div class="event-caption">Genesis International Film Festival — масштабные события</div>
+      </div>
+      <div class="event-photo-card large">
+        <img src="assets/img/event-04.jpg" alt="Конференция по делегированию" />
+        <div class="event-caption">Конференция по делегированию — деловые встречи и мастер-классы</div>
+      </div>
+      <div class="event-photo-card">
+        <img src="assets/img/event-05.jpg" alt="Кейтеринг и фрукты" />
+        <div class="event-caption">Премиальный кейтеринг и свежие фрукты для гостей</div>
+      </div>
+      <div class="event-photo-card large">
+        <img src="assets/img/event-06.jpg" alt="Зал для лекций и презентаций" />
+        <div class="event-caption">Зал для лекций, презентаций и образовательных мероприятий</div>
+      </div>
+    </div>
+    <style>
+      .event-gallery { margin-bottom: 48px; overflow:hidden; }
+      .event-photo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 28px;
+      }
+@media (max-width: 480px){
+  .event-photo-grid{ grid-template-columns: 1fr !important; }
+}
+@media (max-width: 375px){
+  .event-photo-grid{ grid-template-columns: 1fr !important; }
+}
+
+      .event-photo-card {
+        position: relative;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 20px 48px rgba(27,83,165,0.24), 0 6px 18px rgba(3,10,22,0.45);
+        background: linear-gradient(180deg, rgba(10,28,55,.72), rgba(4,16,34,.78));
+        border: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 320px;
+      }
+      .event-photo-card.large { min-height: 420px; }
+      .event-photo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 22px;
+      }
+      .event-caption {
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        background: linear-gradient(180deg, rgba(27,83,165,0.38), rgba(4,16,34,0.24));
+        color: #fff;
+        font-size: 17px;
+        font-weight: 500;
+        padding: 18px 22px 14px 22px;
+        border-bottom-left-radius: 22px;
+        border-bottom-right-radius: 22px;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        letter-spacing: 0.01em;
+      }
+      @media (max-width: 900px) {
+        .event-photo-card.large { min-height: 320px; }
+        .event-caption { font-size: 15px; padding: 14px 12px 10px 12px; }
+      }
+    </style>
+  </section>
+
+  <section class="section" id="solutions">
+    <h2 class="tg-underline">Комплексные решения для ваших бизнес‑задач</h2>
+    <div class="grid-2">
+      <div class="card glass">
+        <h3>Полное техническое оснащение</h3>
+        <p class="meta">Современные проекторы, экраны, микрофоны и звуковое оборудование для проведения презентаций любой сложности.</p>
+      </div>
+      <div class="card glass">
+        <h3>Профессиональный кейтеринг</h3>
+        <p class="meta">Сотрудничаем с проверенными партнёрами, которые обеспечат питание в любой форме — от кофе-брейков до банкетов.</p>
+      </div>
+      <div class="card glass">
+        <h3>Трансформация пространств</h3>
+        <p class="meta">Возможность быстрой адаптации помещений под различные форматы — от лекций до круглых столов.</p>
+      </div>
+      <div class="card glass">
+        <h3>Персональный менеджер</h3>
+        <p class="meta">Выделенный специалист будет координировать организационные вопросы и решать любые возникающие задачи.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <h2 class="tg-underline">Тарифы и пакеты</h2>
+    <div class="grid-3">
+      <div class="card glass">
+        <h3>5 000 рублей</h3>
+        <p class="meta">Почасовая аренда</p>
+        <p>Минимальная почасовая стоимость краткосрочных мероприятий без дополнительных услуг.</p>
+      </div>
+      <div class="card glass">
+        <h3>60 000 рублей</h3>
+        <p class="meta">Дневной пакет</p>
+        <p>Полный день аренды со всем необходимым оборудованием и сервисами.</p>
+      </div>
+      <div class="card glass">
+        <h3>10%</h3>
+        <p class="meta">Скидка для клиентов</p>
+        <p>Специальные условия для компаний, регулярно проводящих мероприятия.</p>
+      </div>
+    </div>
+
+    <div class="card glass" style="margin-top:14px">
+      <div class="kit">
+        <div>
+          <strong>Включено в стоимость</strong>
+          <p class="meta">Оборудование, Wi‑Fi, климат‑контроль, кофепоинт с напитками и легкими закусками.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <h2 class="tg-underline">Отзывы (источник: Яндекс-Карты)</h2>
+    
+<div class="reviews-widget">
+  <div class="embed card glass">
+    <iframe src="https://yandex.ru/maps-reviews-widget/18209801386?comments" loading="lazy" title="Отзывы Яндекс.Карт"></iframe>
+    <a class="yandex-link" href="https://yandex.ru/maps/org/telegraf_v_ritme/18209801386/reviews/" target="_blank" rel="noopener">Читать все отзывы на Яндекс-Картах</a>
+  </div>
+</div>
+
+  </section>
+
+  <section class="section booking-section banner-track" id="booking-inline">
+    <div class="card glass booking-card">
+      <h2 class="tg-underline">Забронировать мероприятие</h2>
+      <p class="sub">Оставьте заявку — мы перезвоним с подтверждением и деталями.</p>
+      <form class="booking-form" data-booking-form="conference" method="POST" action="send.php" novalidate>
+        <input type="hidden" name="source" value="Конференц-зал (блок)" data-booking-source>
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
+        <div class="form-grid">
+          <div class="full form-field" data-event-format-group>
+            <label>Формат мероприятия *</label>
+            <select name="event_format" required data-event-format-select>
+              <option value="" disabled selected>Выберите формат</option>
+              <option>Тренинг / лекция / мастер‑класс</option>
+              <option>Презентация</option>
+              <option>Конференция</option>
+              <option>Бизнес‑завтрак</option>
+              <option>Стратегическая сессия</option>
+              <option>Съёмки</option>
+              <option value="other">Другое (указать вручную)</option>
+            </select>
+          </div>
+          <div class="full form-field" data-event-format-other style="display:none">
+            <label>Свой формат</label>
+            <input name="event_format_custom" placeholder="Например: круглый стол, meetup и т.п."/>
+          </div>
+          <div class="form-field">
+            <label>Дата от *</label>
+            <input type="date" name="date_from" required/>
+          </div>
+          <div class="form-field">
+            <label>Дата до *</label>
+            <input type="date" name="date_to" required/>
+          </div>
+          <div class="form-field">
+            <label>Кол‑во часов в день *</label>
+            <input type="number" name="hours_per_day" min="1" max="24" step="1" placeholder="Например, 8" required/>
+          </div>
+          <div class="form-field">
+            <label>Имя *</label>
+            <input name="name" required placeholder="Иван Иванов"/>
+          </div>
+          <div class="form-field">
+            <label>Телефон *</label>
+            <input name="phone" required placeholder="+7 ___ ___ __ __"/>
+          </div>
+          <div class="form-field">
+            <label>Компания (необязательно)</label>
+            <input name="company" placeholder="ООО «Компания»"/>
+          </div>
+          <div class="full form-field">
+            <label>О мероприятии и пожелания (необязательно)</label>
+            <textarea name="message" placeholder="Формат, количество гостей, оборудование и т.д."></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="glass-btn accent" type="submit">Отправить</button>
+        </div>
+        <p class="notice" aria-live="polite" data-booking-status></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" id="map-top">
+    <div class="hero-banner card glass">
+      <iframe title="Карта — Москва, Дмитровское ш., 81"
+        src="https://yandex.ru/map-widget/v1/?ll=37.549561%2C55.861853&z=16&mode=search&text=%D0%A2%D0%B5%D0%BB%D0%B5%D0%B3%D1%80%D0%B0%D1%84%20%D0%B2%20%D0%A0%D0%B8%D1%82%D0%BC%D0%B5&whatshere%5Bpoint%5D=37.549561%2C55.861853&whatshere%5Bzoom%5D=17"
+        loading="lazy" allowfullscreen style="width:100%;height:360px;border:0;display:block"></iframe>
+    </div>
+  </section>
+</main>
+
+
+<footer class="footer wrapper banner-track" id="contacts">
+  <div class="cols">
+    <div class="footer-contacts">
+      <h3>Контакты</h3>
+      <p>Тел: <a href="tel:+79808002549">+7 980 800 25 49</a><br/>
+      E-mail: <a href="mailto:dyardgrupp@gmail.com">dyardgrupp@gmail.com</a></p>
+      <p class="notice">Адрес: Москва, Дмитровское шоссе, 81 (Телеграф в ритме)</p>
+    </div>
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html" aria-label="Telegraph — на главную">
+        <span class="footer-logo__mark"></span>
+        <span>Telegraph</span>
+      </a>
+      <p class="footer-tagline">Коворкинг &amp; конференц-зал</p>
+    </div>
+  </div>
+  <p class="notice footer-legal">ООО «Диджитал Ярд Групп» · ИНН 9715410883 · ОГРН 1217700604626</p>
+</footer>
+
+</div>
+
+
+<div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <h3 id="booking">Забронировать</h3>
+    <p class="notice">Заполните форму — мы свяжемся с вами для подтверждения. Поля с * обязательны.</p>
+    <form id="bookForm" class="booking-form" data-booking-form="conference-modal" method="POST" action="send.php" novalidate>
+      <input type="hidden" name="source" id="formSource" value="Главная" data-booking-source />
+      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"/>
+      <div class="form-grid">
+        
+<div class="full form-field" data-event-format-group>
+  <label>Формат мероприятия *</label>
+  <select name="event_format" id="eventFormat" required data-event-format-select>
+    <option value="" disabled selected>Выберите формат</option>
+    <option>Тренинг / лекция / мастер‑класс</option>
+    <option>Презентация</option>
+    <option>Конференция</option>
+    <option>Бизнес‑завтрак</option>
+    <option>Стратегическая сессия</option>
+    <option>Съёмки</option>
+    <option value="other">Другое (указать вручную)</option>
+  </select>
+</div>
+<div id="eventFormatOtherWrap" class="full form-field" style="display:none" data-event-format-other>
+  <label>Свой формат</label>
+  <input name="event_format_custom" id="eventFormatOther" placeholder="Например: круглый стол, meetup и т.п."/>
+</div>
+<div class="form-field">
+  <label>Дата от *</label>
+  <input type="date" name="date_from" required/>
+</div>
+<div class="form-field">
+  <label>Дата до *</label>
+  <input type="date" name="date_to" required/>
+</div>
+<div class="form-field">
+  <label>Кол‑во часов в день *</label>
+  <input type="number" name="hours_per_day" min="1" max="24" step="1" placeholder="Например, 8" required/>
+</div>
+
+        <div class="form-field">
+          <label>Имя *</label>
+          <input name="name" required placeholder="Иван Иванов"/>
+        </div>
+        <div class="form-field">
+          <label>Телефон *</label>
+          <input name="phone" required placeholder="+7 ___ ___ __ __"/>
+        </div>
+        <div class="form-field">
+          <label>Компания (необязательно)</label>
+          <input name="company" placeholder="ООО «Компания»"/>
+        </div>
+        <div class="full form-field">
+          <label>О вашей команде и пожелания (необязательно)</label>
+          <textarea name="message" placeholder="Количество людей, переговорные, парковка и т.д."></textarea>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="glass-btn" data-close-modal>Отмена</button>
+        <button class="glass-btn accent" type="submit">Отправить</button>
+      </div>
+      <p class="notice" id="formStatus" aria-live="polite" data-booking-status></p>
+    </form>
+  </div>
+</div>
+
+
+<script src="assets/js/main.js"></script>
+
+<script id="event-format-toggle">
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('[data-event-format-select]').forEach(function(select){
+    var form = select.closest('form');
+    if(!form) return;
+    var wrap = form.querySelector('[data-event-format-other]');
+    if(!wrap) return;
+    var input = wrap.querySelector('input');
+    function apply(){
+      var isOther = select.value === 'other';
+      wrap.style.display = isOther ? '' : 'none';
+      if(input){ input.required = isOther; if(!isOther) input.value = ''; }
+    }
+    select.addEventListener('change', apply);
+    if(form){
+      form.addEventListener('reset', function(){ setTimeout(apply, 0); });
+    }
+    apply();
+  });
+});
+</script>
+
+
+<script id="gallery-swipe">
+document.addEventListener('DOMContentLoaded', function(){
+  var gal = document.getElementById('gallery');
+  if(!gal || gal.dataset.swipeBound) return;
+  gal.dataset.swipeBound = '1';
+  var vp = gal.querySelector('.viewport');
+  if(!vp) return;
+  var slides = vp.children.length;
+  var i = 0;
+  function update(){ vp.style.transform = 'translateX(-' + (i*100) + '%)'; }
+  var prev = gal.querySelector('[data-gal-prev]');
+  var next = gal.querySelector('[data-gal-next]');
+  if(prev) prev.addEventListener('click', function(){ i = (i-1+slides)%slides; update(); });
+  if(next) next.addEventListener('click', function(){ i = (i+1)%slides; update(); });
+
+  var startX=0, dx=0, dragging=false;
+  // touch
+  gal.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; dragging = true; }, {passive:true});
+  gal.addEventListener('touchmove', function(e){ if(!dragging) return; dx = e.touches[0].clientX - startX; }, {passive:true});
+  gal.addEventListener('touchend', function(){ if(!dragging) return; if(Math.abs(dx) > 50){ i = dx < 0 ? (i+1)%slides : (i-1+slides)%slides; update(); } dx = 0; dragging = false; });
+
+  // mouse (desktop)
+  gal.addEventListener('mousedown', function(e){ startX = e.clientX; dragging = true; gal.style.cursor='grabbing'; });
+  gal.addEventListener('mousemove', function(e){ if(!dragging) return; dx = e.clientX - startX; });
+  document.addEventListener('mouseup', function(){ if(!dragging) return; if(Math.abs(dx) > 60){ i = dx < 0 ? (i+1)%slides : (i-1+slides)%slides; update(); } dx = 0; dragging = false; gal.style.cursor=''; });
+});
+</script>
+
+
+<script src="assets/js/carousel.js"></script>
+</body></html>
